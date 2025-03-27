@@ -12,8 +12,8 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', async(req, res) => {
-    const school = await show_list()
-    res.render('list_schools.ejs', { school });
+    const schools = await show_list()
+    res.render('list_schools.ejs', { schools });
 })
 
 app.get('/listSchools', async (req, res) => {
