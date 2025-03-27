@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>School Cards</title>
+    <link rel="stylesheet" type="text/css" href="/list_schools.css">
+</head>
+<body>
+    <h1>List of all schools: </h1>
+    <div class="cards-container">
+        <% if (schools && schools.length) { %>
+            <% schools.forEach(function(school) { %>
+                <div class="card">
+                    <h2><%= school.name %></h2>
+                    <p><strong>Address:</strong> <%= school.address %></p>
+                    <p><strong>Latitude:</strong> <%= school.latitude %></p>
+                    <p><strong>Longitude:</strong> <%= school.longitude %></p>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <p>No schools available.</p>
+        <% } %>
+    </div>
+    <a href="/addSchool" class="add-school-btn">Add School</a>
+    <script>
+        
+    </script>
+</body>
+</html>

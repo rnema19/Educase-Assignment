@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Add School</title>
+    <link rel="stylesheet" type="text/css" href="/add_school.css">
+</head>
+<body>
+    <h1>Add School</h1>
+    <form action="/addSchool" method="POST" class="add-school-form">
+        <label for="name">School Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="latitude">Latitude:</label>
+        <input type="text" id="latitude" name="latitude" required>
+
+        <label for="longitude">Longitude:</label>
+        <input type="text" id="longitude" name="longitude" required>
+
+        <button type="submit" class="submit-btn">Add School</button>
+    </form>
+    <a href="/listSchools" class="back-btn">Back to Schools</a>
+</body>
+</html>
