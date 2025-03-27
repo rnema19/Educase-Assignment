@@ -11,6 +11,11 @@ app.set('view engine', 'ejs');
 // Serve static files from public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/', async(req, res) => {
+    const school = await show_list()
+    res.render('list_schools.ejs', { schools });
+})
+
 app.get('/listSchools', async (req, res) => {
     const { latitude, longitude } = req.query;
     let schools;
@@ -21,8 +26,8 @@ app.get('/listSchools', async (req, res) => {
         // else, simply list schools
         schools = await show_list();
     }
-    // res.render('list_schools.ejs', { schools });
-    res.json(schools)
+    res.render('list_schools.ejs', { schools });
+    // res.json(schools)
 });
 
 app.get('/addSchool', async(req,res) => {
