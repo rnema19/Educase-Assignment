@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', async(req, res) => {
     const school = await show_list()
-    res.render('list_schools.ejs', { schools });
+    res.render('list_schools.ejs', { school });
 })
 
 app.get('/listSchools', async (req, res) => {
